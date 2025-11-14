@@ -4,6 +4,8 @@ import Projects from './components/Projects';
 import Connect from './components/Connect';
 
 function App() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
   return (
     <div className="App">
       <nav className="top-nav">
@@ -17,7 +19,21 @@ function App() {
           </a>
 
           <div className="nav-links">
-            <a href="#projects">Projects</a>
+            <div className={`nav-item dropdown ${menuOpen ? 'open' : ''}`}>
+              <button
+                className="dropdown-toggle"
+                aria-haspopup="true"
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((s) => !s)}
+              >
+                Projects ▾
+              </button>
+              <div className="dropdown-menu">
+                <a href="#projects-personal-projects">Personal Projects</a>
+                <a href="#projects-school-projects">School Projects</a>
+                <a href="#projects-hackathons">Hackathons</a>
+              </div>
+            </div>
             <a href="#connect">Connect</a>
           </div>
         </div>

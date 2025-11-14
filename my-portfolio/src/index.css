@@ -8,6 +8,7 @@
   --accent-1: #EAB6BC;
   --accent-2: #882c45;
   --accent-3: #B7676A;
+  --link-color: #455F9E;
   --text-default: #882c45;
 }
 
@@ -22,6 +23,9 @@ body {
 }
 
 html { scroll-behavior: smooth; }
+
+/* Global link color (can be overridden by more specific rules) */
+a { color: var(--link-color); }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
