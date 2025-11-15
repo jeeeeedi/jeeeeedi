@@ -2,6 +2,10 @@
 # cd my-portfolio
 # npm start
 
+## to build & publish (don't edit gh-pages manually; this updates gh-pages automatically)
+# cd my-portfolio
+# npm install   # only if dependencies changed or not installed
+# npm run deploy
 
 #!/usr/bin/env bash
 set -euo pipefail
