@@ -1,5 +1,5 @@
 import React from 'react';
-import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06 } from '../assets';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard } from '../assets';
 
 // Helper to replace known words/URLs in project descriptions with anchors
 function renderDescription(text){
@@ -52,7 +52,7 @@ const projects = [
     subtitle: 'Puppy Escape',
     link: 'https://github.com/jeeeeedi/make-your-game',
     media: { type: 'video', src: puppyescapemov, poster: puppyescapepng },
-    description: 'This was our first game development project. We had to create a single-player game similar to Bomberman using pure JavaScript, HTML, and CSS, focusing on achieving a consistent 60 FPS without any frame drops. I implemented the game mechanics and optimized performance, which deepened my understanding of the `requestAnimationFrame`, the event loop, and DOM manipulation. You can play our game, Puppy Escape, here: https://jeeeeedi.github.io/make-your-game/.',
+    description: 'This was our first game development project. We had to create a single-player game similar to Bomberman using pure JavaScript, HTML, and CSS, focusing on achieving a consistent 60 FPS without any frame drops. I implemented the game mechanics and optimized performance, which deepened my understanding of the requestAnimationFrame, the event loop, and DOM manipulation. You can play our game, Puppy Escape, here: https://jeeeeedi.github.io/make-your-game/.',
     skills: ['JavaScript', 'HTML', 'CSS', 'requestAnimationFrame', 'event loop', 'DOM manipulation', 'Developer Tools', 'game development']
   },
   {
@@ -79,13 +79,87 @@ const projects = [
     skills: ['Java', 'Spring Boot', 'microservices', 'Spring Security', 'MongoDB', 'Angular', 'Kafka', 'JWT', 'HTTPS', 'SSL', 'CORS', 'Docker', 'image handling', 'API', 'CRUD', 'authentication', 'authorization', 'bcrypt', 'TypeScript', 'JavaScript', 'HTML', 'CSS']
   }
 ];
+const hackathonProjects = [
+  {
+    title: 'Ålands Idrott x Consilia Data Challange',
+    subtitle: 'J2 Process Optimization',
+    link: 'https://www.linkedin.com/posts/grit-lab-%C3%A5land_innovation-sportsdevelopment-leadership-activity-7364641522106920960-34dW',
+    media: { type: 'video', src: idrott_dashboard, poster: idrott_AttendancebyAgeGroup },
+    description: 'Ålands Idrott manages sports club funding, but member and activity data is fragmented across two systems (Suomisport and Membra/Consilia), making fair, data-driven fund allocation difficult. Our objective was to build a solution to reconcile and analyze data from both systems, identify duplicates, and visualize participation statistics to support transparent, auditable funding decisions.',
+    solution: `**Our solution:** We built a data-driven funding tool that automates reconciliation, analysis, and decision-making for Ålands Idrott:
+
+  - **Data wrangling:** Fetches and deduplicates data from Membra and Suomisport APIs (simulated with thousands of fake data in JSON), reconciles records in a Go backend, and stores clean data in SQLite. Manual PDF applications are integrated via a simple input form.
+
+  - **Process optimization:** Automatically calculates scores, allocation percentages, and suggests budgets. Provides a step-by-step workflow with decision criteria, real-time budget tracking, and notes—eliminating manual back-and-forth between forms and tables.
+
+  - **Reconciliation method:** Members matched using first name, last name, birth date, and zip code; only registered clubs can be selected.
+
+  - **Privacy and roles:** Names are hidden for GDPR; the prototype supports a single user.
+
+  Our solution streamlines data handling and funding decisions while keeping the process auditable and user-friendly. At the end of the four-day hackathon, we also pitched and presented our solution to the panel of judges.`,
+    skills: ['Go', 'SQLite', 'React/Next.js', 'Tailwind', 'TypeScript', 'Recharts']
+  }
+];
 
 // Group projects into categories.
 const categories = [
   { title: 'Personal Projects', projects: [] },
   { title: 'School Projects', projects },
-  { title: 'Hackathons', projects: [] }
+  { title: 'Hackathons', projects: hackathonProjects }
 ];
+
+// Render multiline text for `solution` (preserve paragraphs and line breaks)
+function renderMultiline(text){
+  if(!text) return null;
+  // Split paragraphs (double newline). Within a paragraph, preserve single-line breaks.
+  const paragraphs = text.split(/\n\n+/);
+  return paragraphs.map((para, pi) => {
+    const lines = para.split(/\n/).map(l => l.trim());
+
+    // If paragraph looks like a list (each line starts with '- '), render as a <ul>
+    const isList = lines.every(l => l.startsWith('- '));
+    if(isList){
+      return (
+        <ul className="solution" key={pi}>
+          {lines.map((l, li) => (
+            <li key={li}>{renderInline(l.replace(/^-\s+/, ''))}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return (
+      <p className="solution" key={pi}>
+        {lines.map((line, li) => (
+          <React.Fragment key={li}>
+            {renderInline(line)}{li < lines.length - 1 ? <br /> : null}
+          </React.Fragment>
+        ))}
+      </p>
+    );
+  });
+}
+
+// Simple inline formatter: handles **bold** and delegates link/url replacement to renderDescription
+function renderInline(text){
+  if(!text) return null;
+  const parts = [];
+  const boldRe = /\*\*(.+?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+  while((match = boldRe.exec(text)) !== null){
+    if(match.index > lastIndex){
+      parts.push(renderDescription(text.slice(lastIndex, match.index)));
+    }
+    parts.push(<strong key={parts.length}>{match[1]}</strong>);
+    lastIndex = match.index + match[0].length;
+  }
+  if(lastIndex < text.length){
+    parts.push(renderDescription(text.slice(lastIndex)));
+  }
+  // flatten nested arrays from renderDescription
+  return parts.flat().map((p, i) => typeof p === 'string' ? <span key={i}>{p}</span> : React.cloneElement(p, {key:i}));
+}
 
 export default function Projects() {
   return (
@@ -234,6 +308,7 @@ function ProjectCard({project}){
       )}
 
       <p className='description'>{renderDescription(project.description)}</p>
+      {project.solution && renderMultiline(project.solution)}
       <ul className='skills'>
         {project.skills.map((skill, index) => (
           <li key={index}>{skill}</li>

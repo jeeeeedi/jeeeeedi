@@ -327,6 +327,23 @@
 .lightbox-close:focus,
 .lightbox-nav:focus{ outline: 2px solid rgba(255,255,255,0.2); }
 
+/* Solution text formatting */
+.solution{
+  color: var(--text-default);
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0.75rem 0;
+  line-height: 1.45;
+}
+.solution ul{
+  margin: 0.3rem 0 0.6rem 1.1rem;
+}
+.solution li{
+  margin: 0.25rem 0;
+}
+.solution strong{
+  font-weight: 700;
+}
+
 .poster-wrap{
   position: relative;
   cursor: pointer;
