@@ -1,8 +1,5 @@
 import React from 'react';
-import fikafinaldemo from '../assets/fikafinaldemo.mp4';
-import fikaposter from '../assets/fikacafe_screens.png';
-import puppyescapemov from '../assets/puppyescape.mov';
-import puppyescapepng from '../assets/puppyescape.png';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2 } from '../assets';
 
 // Helper to replace known words/URLs in project descriptions with anchors
 function renderDescription(text){
@@ -61,9 +58,9 @@ const projects = [
   {
     title: 'graphql',
     link: 'https://github.com/jeeeeedi/graphql',
-    media: { type: 'video', src: puppyescapemov, poster: puppyescapepng }, //TODO: add media
-    description: 'graphql description placeholder.', //TODO: update description
-    skills: ['JavaScript'] //TODO: update skills
+    media: { type: 'carousel', images: [graphql1, graphql2] },
+    description: 'I created a grit:lab student profile page using GraphQL to learn the query language and manipulations associated with it. I developed a user interface that displays selected school information, including a statistics section with SVG graphs illustrating my achievements. I also implemented a secure login page with JWT authentication to access my data.',
+    skills: ['JavaScript', 'SVG', 'GraphQL', 'web hosting', 'JWT', 'UI/UX', 'API', 'web development', 'data visualization']
   },
   {
     title: 'social-network',
@@ -113,6 +110,30 @@ export default function Projects() {
 
 function ProjectCard({project}){
   const [videoLoaded, setVideoLoaded] = React.useState(false);
+  const [carouselIndex, setCarouselIndex] = React.useState(0);
+  const [lightboxOpen, setLightboxOpen] = React.useState(false);
+  const [lightboxIndex, setLightboxIndex] = React.useState(0);
+
+  // reset carousel index when project changes
+  React.useEffect(() => {
+    setCarouselIndex(0);
+  }, [project]);
+
+  // keyboard navigation for lightbox and carousel
+  React.useEffect(() => {
+    function onKey(e){
+      if(lightboxOpen){
+        if(e.key === 'Escape') setLightboxOpen(false);
+        if(e.key === 'ArrowLeft') setLightboxIndex(i => (i - 1 + project.media.images.length) % project.media.images.length);
+        if(e.key === 'ArrowRight') setLightboxIndex(i => (i + 1) % project.media.images.length);
+      } else if(project.media && project.media.type === 'carousel'){
+        if(e.key === 'ArrowLeft') setCarouselIndex(i => (i - 1 + project.media.images.length) % project.media.images.length);
+        if(e.key === 'ArrowRight') setCarouselIndex(i => (i + 1) % project.media.images.length);
+      }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxOpen, project]);
 
   return (
       <article className="project-card">
@@ -123,6 +144,75 @@ function ProjectCard({project}){
         <div className="project-media">
           {project.media.type === 'image' ? (
             <img src={project.media.src} alt={project.title} loading="lazy" />
+          ) : project.media.type === 'carousel' ? (
+            // Simple carousel for multiple images
+            <div className="carousel" role="group" aria-label={`${project.title} images`}>
+              <div className="carousel-viewport">
+                <div
+                  className="carousel-track"
+                  style={{ width: `${project.media.images.length * 100}%`, transform: `translateX(-${carouselIndex * (100 / project.media.images.length)}%)` }}
+                >
+                  {project.media.images.map((img, idx) => (
+                      <div className="carousel-slide" key={idx} style={{ flex: `0 0 ${100 / project.media.images.length}%` }}>
+                      <img
+                        src={img}
+                        alt={`${project.title} screenshot ${idx + 1}`}
+                        loading="lazy"
+                        onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button
+                className="carousel-prev"
+                onClick={() => setCarouselIndex((carouselIndex - 1 + project.media.images.length) % project.media.images.length)}
+                aria-label="Previous image"
+                title="Previous"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                className="carousel-next"
+                onClick={() => setCarouselIndex((carouselIndex + 1) % project.media.images.length)}
+                aria-label="Next image"
+                title="Next"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                  <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="carousel-dots">
+                {project.media.images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    className={idx === carouselIndex ? 'active' : ''}
+                    onClick={() => setCarouselIndex(idx)}
+                    aria-label={`Show image ${idx + 1}`}
+                    title={`Show image ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Lightbox / modal for expanded image */}
+              {lightboxOpen && (
+                <div className="lightbox" role="dialog" aria-modal="true" aria-label={`${project.title} image viewer`}>
+                  <div className="lightbox-overlay" onClick={() => setLightboxOpen(false)} />
+                  <div className="lightbox-content">
+                    <button className="lightbox-close" onClick={() => setLightboxOpen(false)} aria-label="Close">✕</button>
+                    <button className="lightbox-nav lightbox-prev" onClick={() => setLightboxIndex((lightboxIndex - 1 + project.media.images.length) % project.media.images.length)} aria-label="Previous image">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </button>
+                    <img src={project.media.images[lightboxIndex]} alt={`${project.title} enlarged ${lightboxIndex + 1}`} />
+                    <button className="lightbox-nav lightbox-next" onClick={() => setLightboxIndex((lightboxIndex + 1) % project.media.images.length)} aria-label="Next image">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           ) : (
             !videoLoaded ? (
               <div className="poster-wrap" role="button" tabIndex={0}
