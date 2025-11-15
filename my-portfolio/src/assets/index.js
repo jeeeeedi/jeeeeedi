@@ -6,6 +6,12 @@ import puppyescapemov from './puppyescape.mov';
 import puppyescapepng from './puppyescape.png';
 import graphql1 from './graphql1.png';
 import graphql2 from './graphql2.png';
+import socnet01 from './socnet01.png';
+import socnet02 from './socnet02.png';
+import socnet03 from './socnet03.png';
+import socnet04 from './socnet04.png';
+import socnet05 from './socnet05.png';
+import socnet06 from './socnet06.png';
 
 export {
   fikafinaldemo,
@@ -13,5 +19,6 @@ export {
   puppyescapemov,
   puppyescapepng,
   graphql1,
-  graphql2
+  graphql2,
+  socnet01, socnet02, socnet03, socnet04, socnet05, socnet06
 };

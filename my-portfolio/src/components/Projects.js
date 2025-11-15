@@ -1,5 +1,5 @@
 import React from 'react';
-import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2 } from '../assets';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06 } from '../assets';
 
 // Helper to replace known words/URLs in project descriptions with anchors
 function renderDescription(text){
@@ -60,21 +60,23 @@ const projects = [
     link: 'https://github.com/jeeeeedi/graphql',
     media: { type: 'carousel', images: [graphql1, graphql2] },
     description: 'I created a grit:lab student profile page using GraphQL to learn the query language and manipulations associated with it. I developed a user interface that displays selected school information, including a statistics section with SVG graphs illustrating my achievements. I also implemented a secure login page with JWT authentication to access my data.',
-    skills: ['JavaScript', 'SVG', 'GraphQL', 'web hosting', 'JWT', 'UI/UX', 'API', 'web development', 'data visualization']
+    skills: ['JavaScript', 'SVG', 'GraphQL', 'web hosting', 'JWT', 'UI/UX', 'API', 'web development', 'GitHub Pages', 'data visualization']
   },
   {
     title: 'social-network',
+    subtitle: 'SocialHub',
     link: 'https://github.com/jeeeeedi/social-network',
-    media: { type: 'video', src: puppyescapemov, poster: puppyescapepng }, //TODO: add media
-    description: 'description placeholder.', //TODO: update description
-    skills: ['JavaScript'] //TODO: update skills
+    media: { type: 'carousel', images: [socnet01, socnet02, socnet03, socnet04, socnet05, socnet06] },
+    description: 'We developed a Facebook-like social network featuring user profiles, followers, posts, comments, image uploads, groups, notifications, and private and group chat capabilities. I initialized the setup for the frontend (Next.js/React) and backend development, where I implemented a Go-based server with SQLite for data management and migration. I designed an entity relationship diagram (ERD) so our application can handle data consistently and efficiently. I also built the posts and comments functionality. Lastly, I deployed a multi-container Docker app to isolate the frontend from the backend environment.',
+    skills: ['JavaScript', 'Go', 'Next.js', 'React', 'SQLite', 'database migration', 'ERD', 'HTTP', 'web development', 'sessions', 'cookies', 'authentication', 'authorization', 'image handling', 'API', 'Docker', 'Websockets', 'bcrypt']
   },
   {
     title: 'buy-01',
-    link: 'https://github.com/jeeeeedi/buy-01',
-    media: { type: 'video', src: puppyescapemov, poster: puppyescapepng }, //TODO: add media
-    description: 'description placeholder.', //TODO: update description
-    skills: ['JavaScript'] //TODO: update skills
+    subtitle: '// 🚧 in progress //',
+    /* link: 'https://github.com/jeeeeedi/buy-01',
+    media: { type: 'video', src: puppyescapemov, poster: puppyescapepng }, //TODO: add media */
+    description: 'We built an e-commerce platform using Spring Boot for the backend and Angular for the frontend. Users can register as either clients or sellers, using JWT for secure authentication. I worked on setting up the microservices, MongoDB, Kafka asynchronous communication, HTTPS/SSL, cross-origin resource sharing (CORS), and multi-container Docker app.',
+    skills: ['Java', 'Spring Boot', 'microservices', 'Spring Security', 'MongoDB', 'Angular', 'Kafka', 'JWT', 'HTTPS', 'SSL', 'CORS', 'Docker', 'image handling', 'API', 'CRUD', 'authentication', 'authorization', 'bcrypt', 'TypeScript', 'JavaScript', 'HTML', 'CSS']
   }
 ];
 
