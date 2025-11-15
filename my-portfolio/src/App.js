@@ -30,7 +30,7 @@ function App() {
               </button>
               <div className="dropdown-menu">
                 <a href="#projects-personal-projects">Personal Projects</a>
-                <a href="#projects-school-projects">School Projects</a>
+                <a href="#projects-selected-school-projects">Selected School Projects</a>
                 <a href="#projects-hackathons">Hackathons</a>
               </div>
             </div>
