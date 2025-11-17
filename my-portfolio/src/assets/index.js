@@ -14,6 +14,9 @@ import socnet05 from './socnet05.png';
 import socnet06 from './socnet06.png';
 import idrott_AttendancebyAgeGroup from './idrott_AttendancebyAgeGroup.png';
 import idrott_dashboard from './idrott_dashboard.mov';
+import nyheter_flowchart from './nyheter_flowchart.png';
+import nyheter_terms from './nyheter_terms.png';
+import nyheter_matches from './nyheter_matches.png';
 
 export {
   fikafinaldemo,
@@ -23,5 +26,6 @@ export {
   graphql1,
   graphql2,
   socnet01, socnet02, socnet03, socnet04, socnet05, socnet06,
-  idrott_AttendancebyAgeGroup, idrott_dashboard
+  idrott_AttendancebyAgeGroup, idrott_dashboard,
+  nyheter_flowchart, nyheter_terms, nyheter_matches
 };

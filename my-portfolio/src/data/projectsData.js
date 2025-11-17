@@ -1,4 +1,4 @@
-import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard } from '../assets';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard, nyheter_flowchart, nyheter_terms, nyheter_matches } from '../assets';
 
 export const schoolProjects = [
     {
@@ -44,11 +44,11 @@ export const personalProjects = [
     {
         title: 'Hållbarhet i Nyheterna // 🚧 in progress //',
         subtitle: 'Analyzing Sustainability Trends in Local Åland News',
-        /* link: '',
-     media: '', */
+        /* link: '',*/
+        media: { type: 'carousel', images: [nyheter_flowchart, nyheter_terms, nyheter_matches] },
         description: 'How frequently and in what context are climate and sustainability topics covered in local news?',
         solution: 'I plan to scrape local news headlines, analyze trends, and visualize coverage to provide insights for the community. This project will be a good opportunity for me to learn a new language, Python, alongside my main stack. I will also have hands-on experience in building a complete data workflow—from scraping and cleaning to analysis and visualization.',
-        skills: ['Python', 'Scrapy']
+        skills: ['Python', 'Scrapy', 'spaCy', 'SQLite', 'NLP', 'lemmatization', 'gensim']
     }
 ];
 
@@ -71,7 +71,7 @@ We built a data-driven funding tool that automates reconciliation, analysis, and
   - **Privacy and roles:** Names are hidden for GDPR; the prototype supports a single user.
 
   Our solution streamlines data handling and funding decisions while keeping the process auditable and user-friendly. At the end of the four-day hackathon, we also pitched and presented our solution to the panel of judges.`,
-        skills: ['Go', 'SQLite', 'React/Next.js', 'Tailwind', 'TypeScript', 'Recharts']
+        skills: ['Go', 'SQLite', 'React', 'Next.js', 'Tailwind', 'TypeScript', 'Recharts']
     }
 ];
 
