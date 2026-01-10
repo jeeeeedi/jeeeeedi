@@ -17,6 +17,11 @@ import idrott_dashboard from './idrott_dashboard.mov';
 import nyheter_flowchart from './nyheter_flowchart.png';
 import nyheter_terms from './nyheter_terms.png';
 import nyheter_matches from './nyheter_matches.png';
+import lovable01 from './eu-sustainability-watch_lovable_01.png';
+import lovable02 from './eu-sustainability-watch_lovable_02.png';
+import n8n from './eu-sustainability-watch_n8n.png';
+import skyvern from './eu-sustainability-watch_skyvern.png';
+import supabase from './eu-sustainability-watch_supabase.png';
 
 export {
   fikafinaldemo,
@@ -27,5 +32,6 @@ export {
   graphql2,
   socnet01, socnet02, socnet03, socnet04, socnet05, socnet06,
   idrott_AttendancebyAgeGroup, idrott_dashboard,
-  nyheter_flowchart, nyheter_terms, nyheter_matches
+  nyheter_flowchart, nyheter_terms, nyheter_matches,
+  lovable01, lovable02, n8n, skyvern, supabase
 };

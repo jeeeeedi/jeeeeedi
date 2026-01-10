@@ -1,4 +1,4 @@
-import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard, nyheter_flowchart, nyheter_terms, nyheter_matches } from '../assets';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard, nyheter_flowchart, nyheter_terms, nyheter_matches, lovable01, lovable02, n8n, skyvern, supabase } from '../assets';
 
 export const schoolProjects = [
     {
@@ -41,6 +41,15 @@ export const schoolProjects = [
 ];
 
 export const personalProjects = [
+    {
+        title: 'EU Sustainability Watch',
+        subtitle: 'Stay Ahead of EU Sustainability Regulations',
+        /* link: '',*/
+        media: { type: 'carousel', images: [lovable01, lovable02, n8n, skyvern, supabase] },
+        description: 'How can professionals effectively keep updated amidst the overwhelming complexity, vast volume, and rapid changes in information?',
+        solution: 'As a former sustainability specialist, I spent hours manually parsing dense documents to keep up with shifting regulations, so now, I developed the EU Sustainability Watch, an n8n-powered automation. It takes input from a Lovable frontend to prompt Skyvern browser agents to autonomously scrape [EUR-Lex](https://eur-lex.europa.eu/homepage.html). OpenAI then structures these complex documents into concise summaries, highlights, and tags stored in a Supabase database. The resulting dashboard provides a filtered digest that allows specialists to prioritize high-impact regulations. While currently tailored for ESG compliance, this prototype showcases a modular architecture that can be adapted to any corporate environment requiring constant monitoring: a cybersecurity analyst tracking emerging virus vulnerabilities (CVEs) or a market strategist monitoring real-time competitive intelligence and industry-specific news to maintain an industry edge.',
+        skills: ['n8n', 'Lovable', 'Skyvern','OpenAI','Supabase','JSON','JavaScript','prompt engineering','REST API','ETL','web scraping','PostgreSQL','automation','ESG']
+    },
     {
         title: 'Hållbarhet i Nyheterna // 🚧 in progress //',
         subtitle: 'Analyzing Sustainability Trends in Local Åland News',
