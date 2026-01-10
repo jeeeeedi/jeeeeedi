@@ -22,6 +22,7 @@ import lovable02 from './eu-sustainability-watch_lovable_02.png';
 import n8n from './eu-sustainability-watch_n8n.png';
 import skyvern from './eu-sustainability-watch_skyvern.png';
 import supabase from './eu-sustainability-watch_supabase.png';
+import paf from './20240504_111610.jpg';
 
 export {
   fikafinaldemo,
@@ -33,5 +34,6 @@ export {
   socnet01, socnet02, socnet03, socnet04, socnet05, socnet06,
   idrott_AttendancebyAgeGroup, idrott_dashboard,
   nyheter_flowchart, nyheter_terms, nyheter_matches,
-  lovable01, lovable02, n8n, skyvern, supabase
+  lovable01, lovable02, n8n, skyvern, supabase,
+  paf
 };

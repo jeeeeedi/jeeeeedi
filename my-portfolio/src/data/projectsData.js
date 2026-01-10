@@ -1,4 +1,4 @@
-import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard, nyheter_flowchart, nyheter_terms, nyheter_matches, lovable01, lovable02, n8n, skyvern, supabase } from '../assets';
+import { fikafinaldemo, fikaposter, puppyescapemov, puppyescapepng, graphql1, graphql2, socnet01, socnet02, socnet03, socnet04, socnet05, socnet06, idrott_AttendancebyAgeGroup, idrott_dashboard, nyheter_flowchart, nyheter_terms, nyheter_matches, lovable01, lovable02, n8n, skyvern, supabase, paf } from '../assets';
 
 export const schoolProjects = [
     {
@@ -47,8 +47,8 @@ export const personalProjects = [
         /* link: '',*/
         media: { type: 'carousel', images: [lovable01, lovable02, n8n, skyvern, supabase] },
         description: 'How can professionals effectively keep updated amidst the overwhelming complexity, vast volume, and rapid changes in information?',
-        solution: 'As a former sustainability specialist, I spent hours manually parsing dense documents to keep up with shifting regulations, so now, I developed the EU Sustainability Watch, an n8n-powered automation. It takes input from a Lovable frontend to prompt Skyvern browser agents to autonomously scrape [EUR-Lex](https://eur-lex.europa.eu/homepage.html). OpenAI then structures these complex documents into concise summaries, highlights, and tags stored in a Supabase database. The resulting dashboard provides a filtered digest that allows specialists to prioritize high-impact regulations. While currently tailored for ESG compliance, this prototype showcases a modular architecture that can be adapted to any corporate environment requiring constant monitoring: a cybersecurity analyst tracking emerging virus vulnerabilities (CVEs) or a market strategist monitoring real-time competitive intelligence and industry-specific news to maintain an industry edge.',
-        skills: ['n8n', 'Lovable', 'Skyvern','OpenAI','Supabase','JSON','JavaScript','prompt engineering','REST API','ETL','web scraping','PostgreSQL','automation','ESG']
+        solution: 'As a former sustainability specialist, I spent hours manually parsing dense documents to keep up with shifting regulations, so now, I developed the EU Sustainability Watch, an n8n-powered automation. It takes input from a Lovable frontend to prompt Skyvern browser agents to autonomously scrape [EUR-Lex](https://eur-lex.europa.eu/homepage.html). OpenAI then structures these complex documents into concise summaries, highlights, and tags stored in a Supabase database. The resulting dashboard provides a filtered digest that allows specialists to prioritize high-impact regulations. While currently tailored for ESG compliance, this prototype showcases a modular architecture that can be adapted to any corporate environment requiring constant monitoring; for example, a cybersecurity analyst tracking emerging virus vulnerabilities (CVEs) or a market strategist monitoring real-time competitive intelligence and industry-specific news.',
+        skills: ['n8n', 'Lovable', 'Skyvern','OpenAI','Supabase','JSON','JavaScript','prompt engineering','REST API','ETL','web scraping','PostgreSQL','automation','ESG','business intelligence','strategic intelligence']
     },
     {
         title: 'Hållbarhet i Nyheterna // 🚧 in progress //',
@@ -62,6 +62,16 @@ export const personalProjects = [
 ];
 
 export const hackathonProjects = [
+    {
+        title: 'Paf Sports Betting Simulator',
+        subtitle: 'Winning team',
+        link: 'https://github.com/jeeeeedi/paf-hackathon', 
+        media: { type: 'image', src: paf },
+        description: 'Provided with a pre-built frontend and strict OpenAPI specifications, we were tasked with building a robust, high-performance backend from scratch to power a sports betting simulation within a limited timeframe.',
+        solution: `#### Our solution
+Our team secured first place through teamwork and communication. We helped each other digest the complex task instructions and quickly divided the complex API requirements into specialized workstreams; while my two teammates focused on the intricate logic for match scheduling and bet settlement, I spearheaded the foundational setup using Java and Spring Boot. I was also responsible for the MongoDB integration, Swagger documentation, and player management.`,
+        skills: ['Java','Spring Boot','MongoDB','backend development','API','Docker','CRUD','OpenAPI','Swagger','Kafka','caching','scheduling']
+    },
     {
         title: 'Ålands Idrott x Consilia Data Challenge',
         subtitle: 'J2 Process Optimization',
