@@ -1,7 +1,7 @@
 ## Hi, I'm Jedi! 👋
 
 I'm a full-stack software development student at grit:lab.
-You can see my portfolio at [https://jeeeeedi.github.io/jeeeeedi/](https://jeeeeedi.github.io/jeeeeedi/).
+You can see my portfolio at [https://jeeeeedi.pages.dev/](https://jeeeeedi.pages.dev/).
 
 <!--
 **jeeeeedi/jeeeeedi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
