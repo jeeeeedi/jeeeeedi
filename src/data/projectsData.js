@@ -57,7 +57,7 @@ export const personalProjects = [
     {
         title: 'Naturkartan.ax // 🚧 in progress //',
         subtitle: 'Hiking trails & cycling routes',
-        link: 'https://jeeeeedi.github.io/naturkartan-ax/',
+        link: 'https://naturkartan-ax.pages.dev/',
         description: 'Interactive map of hiking trails and cycling routes across the Åland Islands, built to make official trail data actually usable with mobile GPS and clear facility markers.',
         solution: `**Data:** Routes + facility points synced from government ArcGIS FeatureServer layers (Ålands landskapsregering).
 
