@@ -23,6 +23,15 @@ import n8n from './eu-sustainability-watch_n8n.png';
 import skyvern from './eu-sustainability-watch_skyvern.png';
 import supabase from './eu-sustainability-watch_supabase.png';
 import paf from './20240504_111610.jpg';
+import buy02_jenkinsflow from './buy-02_jenkinscicdpipeline.png';
+import empower from './empower.jpg';
+import ofver from './ofver.jpg';
+import bi_monthly_residents from './monthlysalespercapitabymunicipalityresidentsonly.png';
+import bi_monthly_visitors from './monthlysalespercapitabymunicipalityresidentsvisitors.png';
+import bi_sales_tourists from './monthlysalesvstourists.png';
+import buy02_jenkins from './buy-02_jenkins.png';
+import buy02_products from './buy-02_products.png';
+import buy02_seller from './buy-02_seller.png';
 
 export {
   fikafinaldemo,
@@ -35,5 +44,8 @@ export {
   idrott_AttendancebyAgeGroup, idrott_dashboard,
   nyheter_flowchart, nyheter_terms, nyheter_matches,
   lovable01, lovable02, n8n, skyvern, supabase,
-  paf
+  paf,
+  buy02_jenkins, buy02_jenkinsflow, buy02_products, buy02_seller,
+  empower, ofver,
+  bi_monthly_residents, bi_monthly_visitors, bi_sales_tourists
 };

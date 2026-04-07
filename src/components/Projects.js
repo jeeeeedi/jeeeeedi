@@ -72,16 +72,20 @@ function ProjectCard({project}){
                   className="carousel-track"
                   style={{ width: `${project.media.images.length * 100}%`, transform: `translateX(-${carouselIndex * (100 / project.media.images.length)}%)` }}
                 >
-                  {project.media.images.map((img, idx) => (
-                      <div className="carousel-slide" key={idx} style={{ flex: `0 0 ${100 / project.media.images.length}%` }}>
-                      <img
-                        src={img}
-                        alt={`${project.title} screenshot ${idx + 1}`}
-                        loading="lazy"
-                        onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
-                      />
-                    </div>
-                  ))}
+                  {project.media.images.map((img, idx) => {
+                    const imgSrc = typeof img === 'string' ? img : img.src;
+                    const imgStyle = typeof img === 'string' ? {} : (img.style || {});
+                    return (
+                      <div className="carousel-slide" key={idx} style={{ flex: `0 0 ${100 / project.media.images.length}%`, ...imgStyle }}>
+                        <img
+                          src={imgSrc}
+                          alt={`${project.title} screenshot ${idx + 1}`}
+                          loading="lazy"
+                          onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <button
