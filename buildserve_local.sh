@@ -1,11 +1,9 @@
 ## to start in dev mode:
-# cd my-portfolio
 # npm start
 
-## to build & publish (don't edit gh-pages manually; this updates gh-pages automatically)
-# cd my-portfolio
+## to build & serve locally
 # npm install   # only if dependencies changed or not installed
-# npm run deploy
+# npm run serve-local
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -33,7 +31,7 @@ else
 fi
 
 echo "Switching to project folder and building..."
-cd "$(dirname "$0")/my-portfolio"
+cd "$(dirname "$0")"
 
 if [ ! -d node_modules ]; then
   echo "node_modules not found — running npm install (this may take a moment)..."
