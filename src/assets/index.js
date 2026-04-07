@@ -2,7 +2,7 @@
 // Add new assets here when you add files to src/assets/.
 import fikafinaldemo from './fikafinaldemo.mp4';
 import fikaposter from './fikacafe_screens.png';
-import puppyescapemov from './puppyescape.mov';
+import puppyescapemov from './puppyescape_compressed.mp4';
 import puppyescapepng from './puppyescape.png';
 import graphql1 from './graphql1.png';
 import graphql2 from './graphql2.png';
@@ -13,7 +13,7 @@ import socnet04 from './socnet04.png';
 import socnet05 from './socnet05.png';
 import socnet06 from './socnet06.png';
 import idrott_AttendancebyAgeGroup from './idrott_AttendancebyAgeGroup.png';
-import idrott_dashboard from './idrott_dashboard.mov';
+import idrott_dashboard from './idrott_dashboard_compressed.mp4';
 import nyheter_flowchart from './nyheter_flowchart.png';
 import nyheter_terms from './nyheter_terms.png';
 import nyheter_matches from './nyheter_matches.png';
