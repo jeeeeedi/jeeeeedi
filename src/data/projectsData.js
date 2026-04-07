@@ -35,7 +35,7 @@ export const schoolProjects = [
     {
         title: 'buy-02',
         subtitle: 'my online shop',
-        link: 'https://github.com/SaddamHosyn/buy-02    ',
+        link: 'https://github.com/SaddamHosyn/buy-02',
         media: { type: 'carousel', images: [buy02_products, buy02_seller, buy02_jenkins, buy02_jenkinsflow] },
         description: `**buy-02** is the culmination of the full Java track: **lets-play** introduced RESTful APIs, CRUD, and production-grade Spring Boot + MongoDB backends with proper auth and error handling; **angul-it** taught Angular component architecture, reactive forms, and client-side state management; **buy-01** assembled these into a microservices marketplace (User, Product, Media services) with Kafka for event-driven communication and JWT/OAuth2 for role-based security; **mr-jenk** introduced Jenkins CI/CD pipeline automation; and **safe-zone** added SonarQube static analysis and security scanning as a quality gate.
 
