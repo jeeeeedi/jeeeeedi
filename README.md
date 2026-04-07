@@ -1,6 +1,6 @@
 ## Hi, I'm Jedi! 👋
 
-I'm a full-stack software development student at grit:lab.
+I'm a full-stack software developer and AI Automations Specialist Trainee.
 You can see my portfolio at [https://jeeeeedi.pages.dev/](https://jeeeeedi.pages.dev/).
 
 <!--
