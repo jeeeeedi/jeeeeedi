@@ -157,13 +157,13 @@ function ProjectCard({project}){
 
       <div className='description'>
         <ReactMarkdown components={{
-          a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />
+          a: ({node, children, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer">{children}</a>
         }}>{project.description || ''}</ReactMarkdown>
       </div>
       {project.solution && (
         <div className="solution">
           <ReactMarkdown components={{
-            a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />
+            a: ({node, children, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer">{children}</a>
           }}>{project.solution}</ReactMarkdown>
         </div>
       )}

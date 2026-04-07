@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <nav className="top-nav">
         <div className="nav-inner">
-          <a className="logo-link" href="#">
+          <a className="logo-link" href="/">
             <img
               className="nav-logo"
               src={process.env.PUBLIC_URL + '/jeeeeedi.jpeg'}
