@@ -13,7 +13,7 @@ function App() {
           <a className="logo-link" href="/">
             <img
               className="nav-logo"
-              src={process.env.PUBLIC_URL + '/jeeeeedi.jpeg'}
+              src={process.env.PUBLIC_URL + '/jeeedi.png'}
               alt="logo"
             />
           </a>
