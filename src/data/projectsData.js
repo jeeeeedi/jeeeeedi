@@ -86,7 +86,6 @@ export const hackathonProjects = [
     {
         title: 'Paf Sports Betting Simulator',
         subtitle: 'The winning team',
-        link: 'https://github.com/jeeeeedi/paf-hackathon', 
         media: { type: 'image', src: paf },
         description: 'Provided with a pre-built frontend and strict OpenAPI specifications, we were tasked with building a robust, high-performance backend from scratch to power a sports betting simulation within a limited timeframe.',
         solution: `#### Our solution
